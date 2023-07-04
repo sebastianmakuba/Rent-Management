@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rent Management System</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Rent Management System</h1>
+
+    <div id="ownerSection">
+      <h2>Owner's Section</h2>
+
+      <form id="addTenantForm">
+        <h3>Add Tenant</h3>
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required>
+
+        <label for="houseNumber">House Number</label>
+        <input type="text" id="houseNumber" required>
+        
+        <label for="houseType">House Type</label>
+        <input type="text" id="houseType" required>
+
+        <label for="idNo">ID Number</label>
+        <input type="text" id="idNo" required>
+
+        <button type="submit">Add Tenant</button>
+      </form>
+
+      <h3>Remove Tenant</h3>
+      <label for="removeTenantId">Tenant ID</label>
+      <input type="number" id="removeTenantId" required>
+      <button id="removeTenantButton">Remove Tenant</button>
+    </div>
+
+    <div id="tenantSection">
+      <h2>Tenant's Section</h2>
+
+      <h3>Generate Invoice</h3>
+      <button id="generateInvoiceButton">Generate Invoice</button>
+
+      <h3>Previous Payment Details</h3>
+      <div id="paymentDetails"></div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+{
+    "tenants": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "phone": "1234567890",
+        "email": "johndoe@example.com",
+        "houseNumber": "A101",
+        "idNo": "ABCD1234",
+        "houseType": "One Bedroom",
+        "monthlyPayments": [
+          {
+            "month": "January 2023",
+            "rent": 14000,
+            "waterBill": 50,
+            "garbageCollectionBill": 30
+          },
+          {
+            "month": "February 2023",
+            "rent": 14000,
+            "waterBill": 50,
+            "garbageCollectionBill": 30
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Jane Smith",
+        "phone": "9876543210",
+        "email": "janesmith@example.com",
+        "houseNumber": "B202",
+        "idNo": "WXYZ5678",
+        "houseType": "Two Bedroom",
+        "monthlyPayments": [
+          {
+            "month": "January 2023",
+            "rent": 20000,
+            "waterBill": 50,
+            "garbageCollectionBill": 30
+          },
+          {
+            "month": "February 2023",
+            "rent": 20000,
+            "waterBill": 50,
+            "garbageCollectionBill": 30
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Michael Johnson",
+        "phone": "5555555555",
+        "email": "michaeljohnson@example.com",
+        "houseNumber": "C303",
+        "idNo": "EFGH5678",
+        "houseType": "Bedsitter",
+        "monthlyPayments": [
+          {
+            "month": "January 2023",
+            "rent": 10000,
+            "waterBill": 50,
+            "garbageCollectionBill": 30
+          },
+          {
+            "month": "February 2023",
+            "rent": 10000,
+            "waterBill": 50,
+            "garbageCollectionBill": 30
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Emily Davis",
+        "phone": "7777777777",
+        "email": "emilydavis@example.com",
+        "houseNumber": "D404",
+        "idNo": "IJKL9012",
+        "houseType": "One Bedroom",
+        "monthlyPayments": [
+          {
+            "month": "January 2023",
+            "rent": 14000,
+            "waterBill": 50,
+            "garbageCollectionBill": 30
+          },
+          {
+            "month": "February 2023",
+            "rent": 14000,
+            "waterBill": 50,
+            "garbageCollectionBill": 30
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Daniel Wilson",
+        "phone": "9999999999",
+        "email": "danielwilson@example.com",
+        "houseNumber": "E505",
+        "idNo": "MNOP3456",
+        "houseType": "Two Bedroom",
+        "monthlyPayments": [
+          {
+            "month": "January 2023",
+            "rent": 20000,
+            "waterBill": 50,
+            "garbageCollectionBill": 30
+          },
+          {
+            "month": "February 2023",
+            "rent": 20000,
+            "waterBill": 50,
+            "garbageCollectionBill": 30
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Olivia Thompson",
+        "phone": "4444444444",
+        "email": "oliviathompson@example.com",
+        "houseNumber": "F606",
+        "idNo": "QRST7890",
+        "houseType": "One Bedroom",
+        "monthlyPayments": [
+          {
+            "month": "January 2023",
+            "rent": 14000,
+            "waterBill": 50,
+            "garbageCollectionBill": 30
+          },
+          {
+            "month": "February 2023",
+            "rent": 14000,
+            "waterBill": 50,
+            "garbageCollectionBill": 30
+          }
+        ]
+      }
+    ]
+  }
+  
