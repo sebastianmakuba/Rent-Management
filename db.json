@@ -1,143 +1,128 @@
 {
-    "tenants": [
-      {
-        "id": 1,
-        "name": "John Doe",
-        "phone": "1234567890",
-        "email": "johndoe@example.com",
-        "houseNumber": "A101",
-        "idNo": "ABCD1234",
-        "houseType": "One Bedroom",
-        "monthlyPayments": [
-          {
-            "month": "January 2023",
-            "rent": 14000,
-            "waterBill": 50,
-            "garbageCollectionBill": 30
-          },
-          {
-            "month": "February 2023",
-            "rent": 14000,
-            "waterBill": 50,
-            "garbageCollectionBill": 30
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Jane Smith",
-        "phone": "9876543210",
-        "email": "janesmith@example.com",
-        "houseNumber": "B202",
-        "idNo": "WXYZ5678",
-        "houseType": "Two Bedroom",
-        "monthlyPayments": [
-          {
-            "month": "January 2023",
-            "rent": 20000,
-            "waterBill": 50,
-            "garbageCollectionBill": 30
-          },
-          {
-            "month": "February 2023",
-            "rent": 20000,
-            "waterBill": 50,
-            "garbageCollectionBill": 30
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "name": "Michael Johnson",
-        "phone": "5555555555",
-        "email": "michaeljohnson@example.com",
-        "houseNumber": "C303",
-        "idNo": "EFGH5678",
-        "houseType": "Bedsitter",
-        "monthlyPayments": [
-          {
-            "month": "January 2023",
-            "rent": 10000,
-            "waterBill": 50,
-            "garbageCollectionBill": 30
-          },
-          {
-            "month": "February 2023",
-            "rent": 10000,
-            "waterBill": 50,
-            "garbageCollectionBill": 30
-          }
-        ]
-      },
-      {
-        "id": 4,
-        "name": "Emily Davis",
-        "phone": "7777777777",
-        "email": "emilydavis@example.com",
-        "houseNumber": "D404",
-        "idNo": "IJKL9012",
-        "houseType": "One Bedroom",
-        "monthlyPayments": [
-          {
-            "month": "January 2023",
-            "rent": 14000,
-            "waterBill": 50,
-            "garbageCollectionBill": 30
-          },
-          {
-            "month": "February 2023",
-            "rent": 14000,
-            "waterBill": 50,
-            "garbageCollectionBill": 30
-          }
-        ]
-      },
-      {
-        "id": 5,
-        "name": "Daniel Wilson",
-        "phone": "9999999999",
-        "email": "danielwilson@example.com",
-        "houseNumber": "E505",
-        "idNo": "MNOP3456",
-        "houseType": "Two Bedroom",
-        "monthlyPayments": [
-          {
-            "month": "January 2023",
-            "rent": 20000,
-            "waterBill": 50,
-            "garbageCollectionBill": 30
-          },
-          {
-            "month": "February 2023",
-            "rent": 20000,
-            "waterBill": 50,
-            "garbageCollectionBill": 30
-          }
-        ]
-      },
-      {
-        "id": 6,
-        "name": "Olivia Thompson",
-        "phone": "4444444444",
-        "email": "oliviathompson@example.com",
-        "houseNumber": "F606",
-        "idNo": "QRST7890",
-        "houseType": "One Bedroom",
-        "monthlyPayments": [
-          {
-            "month": "January 2023",
-            "rent": 14000,
-            "waterBill": 50,
-            "garbageCollectionBill": 30
-          },
-          {
-            "month": "February 2023",
-            "rent": 14000,
-            "waterBill": 50,
-            "garbageCollectionBill": 30
-          }
-        ]
-      }
-    ]
-  }
-  
+  "owners": [
+    {
+      "name": "John Smith",
+      "username": "johnsmith",
+      "idNo": "12345",
+      "houses": [
+        {
+          "houseNumber": "A101",
+          "houseType": "Bedsitter",
+          "rentAmount": 10000
+        },
+        {
+          "houseNumber": "B202",
+          "houseType": "One Bedroom",
+          "rentAmount": 14000
+        }
+      ]
+    },
+    {
+      "name": "Jane Doe",
+      "username": "janedoe",
+      "idNo": "054321",
+      "houses": [
+        {
+          "houseNumber": "C303",
+          "houseType": "Two Bedroom",
+          "rentAmount": 20000
+        }
+      ]
+    }
+  ],
+  "tenants": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "phone": "1234567890",
+      "email": "johndoe@example.com",
+      "houseNumber": "A101",
+      "houseType": "Bedsitter",
+      "idNo": "012345",
+      "rentAmount": 10000,
+      "bills": [
+        {
+          "month": "June 2023",
+          "amount": 500
+        },
+        {
+          "month": "May 2023",
+          "amount": 500
+        }
+      ],
+      "previousBalances": 1000,
+      "previousPayments": [
+        {
+          "date": "2023-06-01",
+          "amount": 2000
+        },
+        {
+          "date": "2023-05-01",
+          "amount": 1500
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "phone": "9876543210",
+      "email": "janesmith@example.com",
+      "houseNumber": "B202",
+      "houseType": "One Bedroom",
+      "idNo": "54321",
+      "rentAmount": 14000,
+      "bills": [
+        {
+          "month": "June 2023",
+          "amount": 700
+        },
+        {
+          "month": "May 2023",
+          "amount": 600
+        }
+      ],
+      "previousBalances": 2000,
+      "previousPayments": [
+        {
+          "date": "2023-06-01",
+          "amount": 3000
+        },
+        {
+          "date": "2023-05-01",
+          "amount": 2000
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Robert Johnson",
+      "phone": "4567891230",
+      "email": "robertjohnson@example.com",
+      "houseNumber": "C303",
+      "houseType": "Two Bedroom",
+      "idNo": "98765",
+      "rentAmount": 20000,
+      "bills": [
+        {
+          "month": "June 2023",
+          "amount": 1000
+        },
+        {
+          "month": "May 2023",
+          "amount": 800
+        }
+      ],
+      "previousBalances": 3000,
+      "previousPayments": [
+        {
+          "date": "2023-06-01",
+          "amount": 4000
+        },
+        {
+          "date": "2023-05-01",
+          "amount": 2500
+        }
+      ]
+    }
+  ]
+}
