@@ -38,10 +38,9 @@ function generateInvoice(event) {
     const tenant = tenants.find(t => t.idNo === idNo && t.houseNumber === houseNumber);
 
     if (tenant) {
-      const currentRent = tenant.rentAmount || 0;
-      // const bills = tenant.bills.reduce((total, bill) => total + bill.amount, 0) || 0;
-      //const previousPayments = tenant.previousPayments.reduce((total, payment) => total + payment.amount, 0) || 0;
-    const upcomingRent = `Your next rent is ${currentRent} + bills + any overdue`
+      const currentRent = tenant.rentAmount ;
+      
+    const upcomingRent = `This month's Bills + ${currentRent}`
       
 
       const invoice = {
@@ -51,9 +50,9 @@ function generateInvoice(event) {
         bills: tenant.bills,
         previousPayments: tenant.previousPayments,
         upcomingRent: upcomingRent,
-        // previousBalances: previousBalances,
         dueDate: new Date().toLocaleDateString()
       };
+      
 
       const paymentDetails = document.getElementById('paymentDetails');
       paymentDetails.innerHTML = `
@@ -164,6 +163,9 @@ async function login(event) {
     document.getElementById('ownerSection').style.display = 'block';
     document.getElementById('tenantSection').style.display = 'none';
     document.getElementById('loginSection').style.display = 'none';
+    const ownerImage = document.getElementById('ownerImage');
+    ownerImage.src = owner.imageURL;
+
   } else {
     const tenants = await getTenants();
     const tenant = tenants.find(t => t.idNo === password && t.houseNumber === username);
@@ -172,15 +174,16 @@ async function login(event) {
       document.getElementById('tenantSection').style.display = 'block';
       document.getElementById('ownerSection').style.display = 'none';
       document.getElementById('loginSection').style.display = 'none';
+
+      const tenantImage = document.getElementById('tenantImage');
+      tenantImage.src = tenant.imageURL;
     } else {
       alert('Invalid login credentials.');
     }
   }
 }
 
-// Rest of the code...
 
-// Add event listeners
 document.getElementById('addTenantForm').addEventListener('submit', function(event) {
   event.preventDefault();
   const name = document.getElementById('name').value;
@@ -201,8 +204,7 @@ document.getElementById('addTenantForm').addEventListener('submit', function(eve
 
   addTenant(tenant)
     .then(() => alert('Tenant added successfully.'))
-    .catch(error => console.error('Error:', error));
-
+    
   this.reset();
 });
 

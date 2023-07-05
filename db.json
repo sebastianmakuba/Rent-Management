@@ -15,7 +15,8 @@
           "houseType": "One Bedroom",
           "rentAmount": 14000
         }
-      ]
+      ],
+      "imageURL": "https://example.com/johnsmith.jpg"
     },
     {
       "name": "Jane Doe",
@@ -27,7 +28,8 @@
           "houseType": "Two Bedroom",
           "rentAmount": 20000
         }
-      ]
+      ],
+      "imageURL": "https://example.com/janedoe.jpg"
     }
   ],
   "tenants": [
@@ -51,7 +53,6 @@
         }
         
       ],
-      
       "previousPayments": [
         {
           "date": "2023-06-01",
@@ -65,7 +66,8 @@
           "date": "2023-07-05",
           "amount": 12000
         }
-      ]
+      ],
+      "imageURL": "https://example.com/johndoe.jpg"
     },
     {
       "id": 2,
@@ -86,7 +88,6 @@
           "amount": 600
         }
       ],
-      
       "previousPayments": [
         {
           "date": "2023-06-01",
@@ -96,7 +97,8 @@
           "date": "2023-05-01",
           "amount": 16000
         }
-      ]
+      ],
+      "imageURL": "https://example.com/janesmith.jpg"
     },
     {
       "id": 3,
@@ -117,7 +119,6 @@
           "amount": 800
         }
       ],
-      
       "previousPayments": [
         {
           "date": "2023-06-01",
@@ -127,7 +128,8 @@
           "date": "2023-05-01",
           "amount": 25000
         }
-      ]
+      ],
+      "imageURL": "https://example.com/robertjohnson.jpg"
     }
   ]
 }
