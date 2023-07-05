@@ -1,74 +1,74 @@
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CARETAKER</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/style.css">
+<head>
+  <link rel="stylesheet" href="/style.css">
+  <title>House Manager</title>
   </head>
-  <body>
-    <div id="loginSection">
-      <h2>Login</h2>
-      <form id="loginForm">
-        <label for="username">Username:</label>
-        <input type="text" id="username" required><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" required><br><br>
-        <button type="submit">Login</button>
-      </form>
+<body>
+  <div id="loginSection">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <div id="logininputs">
+      <label for="username">Username:</label>
+      <input type="text" id="username" required><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" required><br><br>
     </div>
-  
-    <div id="ownerSection" class="section">
-      <h2>Owner Section</h2>
-      <h3>Add Tenant</h3>
-      <form id="addTenantForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" required><br><br>
-        <label for="phone">Phone:</label>
-        <input type="text" id="phone" required><br><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" required><br><br>
-        <label for="houseNumber">House Number:</label>
-        <input type="text" id="houseNumber" required><br><br>
-        <label for="houseType">House Type:</label>
-        <select id="houseType" required>
-          <option value="Bedsitter">Bedsitter</option>
-          <option value="One Bedroom">One Bedroom</option>
-          <option value="Two Bedroom">Two Bedroom</option>
-        </select><br><br>
-        <label for="idNo">ID No:</label>
-        <input type="text" id="idNo" required><br><br>
-        <button type="submit">Add Tenant</button>
-      </form>
-  
-      <h3>Remove Tenant</h3>
-      <label for="removeTenantId">Tenant ID:</label>
-      <input type="number" id="removeTenantId" required>
-      <button id="removeTenantButton">Remove Tenant</button>
-  
-      <h3>Upload Bill</h3>
-      <form id="uploadBillForm">
-        <label for="billTenantId">Tenant ID:</label>
-        <input type="number" id="billTenantId" required><br><br>
-        <label for="billMonth">Bill Month:</label>
-        <input type="text" id="billMonth" required><br><br>
-        <label for="billAmount">Bill Amount:</label>
-        <input type="number" id="billAmount" required><br><br>
-        <button type="submit">Upload Bill</button>
-      </form>
-    </div>
-  
-    <div id="tenantSection" class="section">
-      <h2>Tenant Section</h2>
-      <form id="invoiceForm">
-        <button id="generateInvoiceButton" type="submit">Generate Invoice</button>
-      </form>
-      <div id="paymentDetails"></div>
-    </div>
-    
-    <script src="/app.js" async defer></script>
-  </body>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <div id="ownerSection" class="section">
+    <h2 id = 'ownerdiv'>Hello</h2>
+    <img id="ownerImage" alt="Owner's Image">
+    <h3>Add Tenant</h3>
+    <form id="addTenantForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required><br><br>
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" required><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required><br><br>
+      <label for="houseNumber">House Number:</label>
+      <input type="text" id="houseNumber" required><br><br>
+      <label for="houseType">House Type:</label>
+      <select id="houseType" required>
+        <option value="Bedsitter">Bedsitter</option>
+        <option value="One Bedroom">One Bedroom</option>
+        <option value="Two Bedroom">Two Bedroom</option>
+      </select><br><br>
+      <label for="idNo">ID No:</label>
+      <input type="text" id="idNo" required><br><br>
+      <button type="submit">Add Tenant</button>
+    </form>
+
+    <h3>Remove Tenant</h3>
+    <label for="removeTenantId">Tenant ID:</label>
+    <input type="number" id="removeTenantId" required>
+    <button id="removeTenantButton">Remove Tenant</button>
+
+    <h3>Upload Bill</h3>
+    <form id="uploadBillForm">
+      <label for="billTenantId">Tenant ID:</label>
+      <input type="number" id="billTenantId" required><br><br>
+      <label for="billMonth">Bill Month:</label>
+      <input type="text" id="billMonth" required><br><br>
+      <label for="billAmount">Bill Amount:</label>
+      <input type="number" id="billAmount" required><br><br>
+      <button type="submit">Upload Bill</button>
+    </form>
+  </div>
+
+  <div id="tenantSection" class="section">
+    <h2>Hello</h2>
+    <!-- <div id = 'greetUser'></div> -->
+    <img id="tenantImage" alt="Tenant's Image">
+    <form id="invoiceForm">
+      <button id="generateInvoiceButton" type="submit">Generate Invoice</button>
+    </form>
+    <div id="paymentDetails"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
 </html>

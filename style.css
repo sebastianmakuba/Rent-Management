@@ -1,76 +1,178 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  margin: 0;
-  padding: 0;
+* {
+  box-sizing: border-box;
 }
 
-h1 {
-  text-align: center;
-  padding: 20px 0;
-  color: #333;
+body {
+  font-family: Arial, sans-serif;
+ background: #70e1f5;  
+background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  
+background: linear-gradient(to right, #ffd194, #70e1f5); 
+
+  margin: 0;
+  padding: 0;
 }
 
 h2 {
   color: #333;
 }
 
-h3 {
-  color: #666;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
+.section {
+  margin: 20px auto;
   padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
 }
 
-form {
-  margin-bottom: 20px;
-}
+
 
 label {
-  display: block;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-weight: bold;
 }
-
+label[for="username"],
+label[for="password"] {
+  color: #e9e1e1;}
 input[type="text"],
 input[type="email"],
-input[type="number"] {
-  width: 100%;
-  padding: 10px;
+input[type="password"],
+select {
+  padding: 5px;
   margin-bottom: 10px;
+  border-radius: 3px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  font-size: 14px;
 }
 
 button {
   padding: 10px 20px;
-  background-color: #333;
   color: #fff;
+  background-color: #007bff;
   border: none;
-  border-radius: 4px;
+  border-radius: 3px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #555;
+  background-color: #0056b3;
+}
+
+#loginSection {
+  margin-top: 0;
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://images.unsplash.com/photo-1521111998-ef042c1931fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhvdXNlJTIwYXBhcnRtZW50fGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60');
+  /* background-size: cover;
+  background-position: center;*/
+  /* background-repeat: no-repeat;  */
+  height: 100vh;
+  }
+  #loginSection h2{
+    color: #f0ecec;
+  }
+  
+#ownerSection,
+#tenantSection {
+  display: none;
+}
+
+#ownerSection h2,
+#tenantSection h2 {
+  margin-top: 20px;
+}
+
+#ownerSection img,
+#tenantSection img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+#uploadBillForm,
+#invoiceForm {
+  margin-top: 20px;
 }
 
 #paymentDetails {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
-/* Media Query for Responsive Design */
-@media (max-width: 768px) {
-  .container {
-    max-width: 100%;
-    padding: 10px;
-  }
+#paymentDetails p {
+  margin-bottom: 5px;
 }
+
+#payButton {
+  margin-top: 10px;
+}
+#ownerSection {
+  display: none;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+#ownerSection h2 {
+  color: #007bff;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+#ownerSection img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #007bff;
+}
+
+
+#uploadBillForm,
+#invoiceForm {
+  margin-top: 20px;
+}
+
+#paymentDetails {
+  margin-top: 20px;
+}
+
+#paymentDetails p {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+#payButton {
+  margin-top: 10px;
+  background-color: #28a745;
+}
+
+#payButton:hover {
+  background-color: #218838;
+}
+
+#removeTenantButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+#removeTenantButton:hover {
+  background-color: #bf0812;
+  cursor: pointer;
+}
+
