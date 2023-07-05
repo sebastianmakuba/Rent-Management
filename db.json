@@ -4,31 +4,13 @@
       "name": "John Smith",
       "username": "johnsmith",
       "idNo": "12345",
-      "houses": [
-        {
-          "houseNumber": "A101",
-          "houseType": "Bedsitter",
-          "rentAmount": 10000
-        },
-        {
-          "houseNumber": "B202",
-          "houseType": "One Bedroom",
-          "rentAmount": 14000
-        }
-      ],
+     
       "imageURL": "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60"
     },
     {
       "name": "Jane Doe",
       "username": "janedoe",
       "idNo": "054321",
-      "houses": [
-        {
-          "houseNumber": "C303",
-          "houseType": "Two Bedroom",
-          "rentAmount": 20000
-        }
-      ],
       "imageURL": "https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60"
     }
   ],

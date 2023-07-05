@@ -145,9 +145,9 @@ function uploadBill(event) {
           alert('Bill uploaded successfully.');
           document.getElementById('uploadBillForm').reset();
         })
-        .catch(error => console.error('Error:', error));
+       
     })
-    .catch(error => console.error('Error:', error));
+   
 }
 
 
@@ -216,7 +216,7 @@ document.getElementById('removeTenantButton').addEventListener('click', function
       alert('Tenant removed successfully.');
       document.getElementById('removeTenantId').value = '';
     })
-    .catch(error => console.error('Error:', error));
+   
 });
 
 document.getElementById('generateInvoiceButton').addEventListener('click', generateInvoice);
