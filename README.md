@@ -1,0 +1,4 @@
+# **House Manager**
+## Description of the Project
+The challenge of untrustworthy caretakers has been a key issue for property owners especially in developing countries. THis is acknowledged to the opaque nature of how most transactions are handled. 
+House manager looks to solve this issue by having an intregral and open system where both the owner and the manager have access to the properties details. It also aims to reduce the cases of fraud and theft by ascertaining authenticity and transparency. This is achieved by allowing the user have access to the payment details which are recorded for future references. Moreover, they have a summary of any transactions that might have occured along the months.
