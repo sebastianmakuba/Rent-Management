@@ -28,32 +28,32 @@ async function removeTenant(tenantId) {
     method: 'DELETE',
   });
 }
-/////INVOICE
-// Generate invoice for the tenant
-function generateInvoice() {
+function generateInvoice(event) {
+  event.preventDefault();
+
   const idNo = document.getElementById('password').value;
   const houseNumber = document.getElementById('username').value;
 
-  // Retrieve tenant data and find the matching tenant
   getTenants().then(tenants => {
     const tenant = tenants.find(t => t.idNo === idNo && t.houseNumber === houseNumber);
 
-    // If tenant found, generate the invoice
     if (tenant) {
-      const currentRent = tenant.rentAmount;
-      const bills = tenant.bills.reduce((total, bill) => total + bill.amount, 0);
-      const previousBalances = tenant.previousBalances;
-      const previousPayments = tenant.previousPayments.reduce((total, payment) => total + payment.amount, 0);
+      const currentRent = tenant.rentAmount || 0;
+      const bills = tenant.bills.reduce((total, bill) => total + bill.amount, 0) || 0;
+      const previousPayments = tenant.previousPayments.reduce((total, payment) => total + payment.amount, 0) || 0;
 
-      const pendingBalance = currentRent + bills + previousBalances - previousPayments;
+      const upcomingRent = bills + currentRent;
+      const previousBalances = previousPayments - upcomingRent;
 
       const invoice = {
         tenantidNo: tenant.idNo,
         houseNumber: tenant.houseNumber,
-        paymentAmount: pendingBalance,
-        dueDate: new Date().toLocaleDateString(),
+        currentRent: currentRent,
+        bills: tenant.bills,
+        previousPayments: tenant.previousPayments,
+        upcomingRent: upcomingRent,
         previousBalances: previousBalances,
-        previousPayments: previousPayments
+        dueDate: new Date().toLocaleDateString()
       };
 
       const paymentDetails = document.getElementById('paymentDetails');
@@ -61,51 +61,126 @@ function generateInvoice() {
         <p>Invoice Generated:</p>
         <p>Tenant ID: ${invoice.tenantidNo}</p>
         <p>House Number: ${invoice.houseNumber}</p>
-        <p>Current Rent: ${currentRent}</p>
-        <p>Bills: ${bills}</p>
-        <p>Previous Balances: ${previousBalances}</p>
-        <p>Previous Payments: ${previousPayments}</p>
-        <p>Pending Balance: ${pendingBalance}</p>
-        <p>Due Date: ${invoice.dueDate}</p>`;
+        <p>Current Rent: ${invoice.currentRent}</p>
+        <p>Bills:</p>
+        ${invoice.bills.map(bill => `<p>Date: ${bill.latestMonthBill}, Amount: ${bill.amount}</p>`).join('')}
+        <p>Previous Payments:</p>
+        ${invoice.previousPayments.map(payment => `<p>Date: ${payment.date}, Amount: ${payment.amount}</p>`).join('')}
+        <p>Upcoming Rent: ${invoice.upcomingRent}</p>
+        <p>Previous Balances: ${invoice.previousBalances}</p>
+        <p>Due Date: ${invoice.dueDate}</p>
+        <button id="payButton">Pay Balance</button>`;
+
+      const payButton = document.getElementById('payButton');
+      payButton.addEventListener('click', () => {
+        const amountToPay = parseInt(prompt('Enter the amount to pay:'));
+        if (!isNaN(amountToPay) && amountToPay > 0) {
+          const paymentDate = new Date().toISOString().split('T')[0];
+
+          // Update the server with the payment details
+          const payment = {
+            date: paymentDate,
+            amount: amountToPay
+          };
+          tenant.previousPayments.push(payment);
+
+          const updatedTenant = {
+            ...tenant,
+            previousPayments: tenant.previousPayments
+          };
+
+          fetch(`http://localhost:3000/tenants/${tenant.id}`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updatedTenant),
+          })
+          .then(() => {
+            alert(`Payment of ${amountToPay} successfully recorded.`);
+          })
+          
+        } else {
+          alert('Invalid amount. Please enter a valid positive number.');
+        }
+      });
 
     } else {
       alert('Invalid credentials. Tenant not found.');
     }
   });
+} 
+
+document.getElementById('uploadBillForm').addEventListener('submit', uploadBill);
+
+function uploadBill(event) {
+  event.preventDefault();
+
+  const tenantId = parseInt(document.getElementById('billTenantId').value);
+  const month = document.getElementById('billMonth').value;
+  const amount = parseInt(document.getElementById('billAmount').value);
+
+  const bill = {
+    latestMonthBill: month,
+    amount: amount
+  };
+
+  // Fetch the tenant by ID and update their bills
+  fetch(`http://localhost:3000/tenants/${tenantId}`)
+    .then(response => response.json())
+    .then(tenant => {
+      tenant.bills.push(bill);
+
+      const updatedTenant = {
+        ...tenant,
+        bills: tenant.bills
+      };
+
+      // Update the server with the new bill
+      fetch(`http://localhost:3000/tenants/${tenantId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedTenant),
+      })
+        .then(() => {
+          alert('Bill uploaded successfully.');
+          document.getElementById('uploadBillForm').reset();
+        })
+        .catch(error => console.error('Error:', error));
+    })
+    .catch(error => console.error('Error:', error));
 }
 
 
-
-// Check login credentials and show the relevant section
-function login(event) {
+async function login(event) {
   event.preventDefault();
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  // Retrieve owner data and find the matching owner
-  getOwners().then(owners => {
-    const owner = owners.find(o => o.name === username && o.idNo === password);
+  const owners = await getOwners();
+  const owner = owners.find(o => o.username === username && o.idNo === password);
 
-    if (owner) {
-      document.getElementById('ownerSection').style.display = 'block';
-      document.getElementById('tenantSection').style.display = 'none';
+  if (owner) {
+    document.getElementById('ownerSection').style.display = 'block';
+    document.getElementById('tenantSection').style.display = 'none';
+    document.getElementById('loginSection').style.display = 'none';
+  } else {
+    const tenants = await getTenants();
+    const tenant = tenants.find(t => t.idNo === password && t.houseNumber === username);
+
+    if (tenant) {
+      document.getElementById('tenantSection').style.display = 'block';
+      document.getElementById('ownerSection').style.display = 'none';
       document.getElementById('loginSection').style.display = 'none';
     } else {
-      // Retrieve tenant data and find the matching tenant
-      getTenants().then(tenants => {
-        const tenant = tenants.find(t => t.idNo === password && t.houseNumber === username);
-
-        if (tenant) {
-          document.getElementById('tenantSection').style.display = 'block';
-          document.getElementById('ownerSection').style.display = 'none';
-          document.getElementById('loginSection').style.display = 'none';
-        } else {
-          alert('Invalid login credentials.');
-        }
-      });
+      alert('Invalid login credentials.');
     }
-  });
+  }
 }
+
+// Rest of the code...
 
 // Add event listeners
 document.getElementById('addTenantForm').addEventListener('submit', function(event) {

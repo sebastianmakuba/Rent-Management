@@ -49,16 +49,21 @@
           "month": "May 2023",
           "amount": 500
         }
+        
       ],
       "previousBalances": 1000,
       "previousPayments": [
         {
           "date": "2023-06-01",
-          "amount": 2000
+          "amount": 12000
         },
         {
           "date": "2023-05-01",
-          "amount": 1500
+          "amount": 8000
+        },
+        {
+          "date": "2023-07-05",
+          "amount": 12000
         }
       ]
     },
@@ -81,15 +86,15 @@
           "amount": 600
         }
       ],
-      "previousBalances": 2000,
+      "previousBalances": 300,
       "previousPayments": [
         {
           "date": "2023-06-01",
-          "amount": 3000
+          "amount": 13000
         },
         {
           "date": "2023-05-01",
-          "amount": 2000
+          "amount": 16000
         }
       ]
     },
@@ -112,15 +117,15 @@
           "amount": 800
         }
       ],
-      "previousBalances": 3000,
+      "previousBalances": -1200,
       "previousPayments": [
         {
           "date": "2023-06-01",
-          "amount": 4000
+          "amount": 18000
         },
         {
           "date": "2023-05-01",
-          "amount": 2500
+          "amount": 25000
         }
       ]
     }

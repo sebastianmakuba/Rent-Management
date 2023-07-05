@@ -1,140 +1,74 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <title>Rent Management System</title>
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Rent Management System</h1>
-     <div id="loginSection">
-      <h2>Login</h2>
-      <form id="loginForm">
-        <label for="username">Username</label>
-        <input type="text" id="username" required>
-
-        <label for="password">Password</label>
-        <input type="password" id="password" required>
-
-        <button type="submit">Login</button>
-      </form>
-    <div id="ownerSection">
-      <h2>Owner's Section</h2>
-
-      <form id="addTenantForm">
-        <h3>Add Tenant</h3>
-        <label for="name">Name</label>
-        <input type="text" id="name" required>
-
-        <label for="phone">Phone Number</label>
-        <input type="text" id="phone" required>
-
-        <label for="email">Email Address</label>
-        <input type="email" id="email" required>
-
-        <label for="houseNumber">House Number</label>
-        <input type="text" id="houseNumber" required>
-        
-        <label for="houseType">House Type</label>
-        <input type="text" id="houseType" required>
-
-        <label for="idNo">ID Number</label>
-        <input type="text" id="idNo" required>
-
-        <button type="submit">Add Tenant</button>
-      </form>
-
-      <h3>Remove Tenant</h3>
-      <label for="removeTenantId">Tenant ID</label>
-      <input type="number" id="removeTenantId" required>
-      <button id="removeTenantButton">Remove Tenant</button>
-    </div>
-
-    <div id="tenantSection">
-      <h2>Tenant's Section</h2>
-
-      <h3>Generate Invoice</h3>
-      <button id="generateInvoiceButton">Generate Invoice</button>
-
-      <h3>Previous Payment Details</h3>
-      <div id="paymentDetails"></div>
-    </div>
-  </div>
-
-  <script src="/app.js"></script>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
+
 <html>
-<head>
-  <title>Rent Management System</title>
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Rent Management System</h1>
-
-    <div id="ownerSection" style="display: none;">
-      <h2>Owner's Section</h2>
-
-      <form id="addTenantForm">
-        <h3>Add Tenant</h3>
-        <label for="name">Name</label>
-        <input type="text" id="name" required>
-
-        <label for="phone">Phone Number</label>
-        <input type="text" id="phone" required>
-
-        <label for="email">Email Address</label>
-        <input type="email" id="email" required>
-
-        <label for="houseNumber">House Number</label>
-        <input type="text" id="houseNumber" required>
-        
-        <label for="houseType">House Type</label>
-        <input type="text" id="houseType" required>
-
-        <label for="idNo">ID Number</label>
-        <input type="text" id="idNo" required>
-
-        <button type="submit">Add Tenant</button>
-      </form>
-
-      <h3>Remove Tenant</h3>
-      <label for="removeTenantId">Tenant ID</label>
-      <input type="number" id="removeTenantId" required>
-      <button id="removeTenantButton">Remove Tenant</button>
-    </div>
-
-    <div id="tenantSection" style="display: none;">
-      <h2>Tenant's Section</h2>
-
-      <h3>Generate Invoice</h3>
-      <button id="generateInvoiceButton">Generate Invoice</button>
-
-      <h3>Upcoming Payment Details</h3>
-      <div id="paymentDetails"></div>
-      <h3>Previous Payment Details</h3>
-      <div id="previousPaymentDetails"></div>
-    </div>
-
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CARETAKER</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
     <div id="loginSection">
       <h2>Login</h2>
-
       <form id="loginForm">
-        <label for="username">Username</label>
-        <input type="text" id="username" required>
-
-        <label for="password">Password</label>
-        <input type="password" id="password" required>
-
+        <label for="username">Username:</label>
+        <input type="text" id="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br><br>
         <button type="submit">Login</button>
       </form>
     </div>
-  </div>
-
-  <script src="/app.js"></script>
-</body>
+  
+    <div id="ownerSection" class="section">
+      <h2>Owner Section</h2>
+      <h3>Add Tenant</h3>
+      <form id="addTenantForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required><br><br>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br><br>
+        <label for="houseNumber">House Number:</label>
+        <input type="text" id="houseNumber" required><br><br>
+        <label for="houseType">House Type:</label>
+        <select id="houseType" required>
+          <option value="Bedsitter">Bedsitter</option>
+          <option value="One Bedroom">One Bedroom</option>
+          <option value="Two Bedroom">Two Bedroom</option>
+        </select><br><br>
+        <label for="idNo">ID No:</label>
+        <input type="text" id="idNo" required><br><br>
+        <button type="submit">Add Tenant</button>
+      </form>
+  
+      <h3>Remove Tenant</h3>
+      <label for="removeTenantId">Tenant ID:</label>
+      <input type="number" id="removeTenantId" required>
+      <button id="removeTenantButton">Remove Tenant</button>
+  
+      <h3>Upload Bill</h3>
+      <form id="uploadBillForm">
+        <label for="billTenantId">Tenant ID:</label>
+        <input type="number" id="billTenantId" required><br><br>
+        <label for="billMonth">Bill Month:</label>
+        <input type="text" id="billMonth" required><br><br>
+        <label for="billAmount">Bill Amount:</label>
+        <input type="number" id="billAmount" required><br><br>
+        <button type="submit">Upload Bill</button>
+      </form>
+    </div>
+  
+    <div id="tenantSection" class="section">
+      <h2>Tenant Section</h2>
+      <form id="invoiceForm">
+        <button id="generateInvoiceButton" type="submit">Generate Invoice</button>
+      </form>
+      <div id="paymentDetails"></div>
+    </div>
+    
+    <script src="/app.js" async defer></script>
+  </body>
 </html>
