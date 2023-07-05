@@ -16,7 +16,7 @@
           "rentAmount": 14000
         }
       ],
-      "imageURL": "https://example.com/johnsmith.jpg"
+      "imageURL": "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60"
     },
     {
       "name": "Jane Doe",
@@ -29,7 +29,7 @@
           "rentAmount": 20000
         }
       ],
-      "imageURL": "https://example.com/janedoe.jpg"
+      "imageURL": "https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60"
     }
   ],
   "tenants": [
@@ -51,7 +51,6 @@
           "month": "May 2023",
           "amount": 500
         }
-        
       ],
       "previousPayments": [
         {
@@ -67,7 +66,7 @@
           "amount": 12000
         }
       ],
-      "imageURL": "https://example.com/johndoe.jpg"
+      "imageURL": "https://media.istockphoto.com/id/1403196779/photo/a-happy-mixed-race-family-of-three-relaxing-in-the-lounge-and-being-playful-together-loving.webp?b=1&s=170667a&w=0&k=20&c=DBT3ZNzlXD65-mFs2AeOBJZ0nC-lPT3YLvPRrNAwyKw="
     },
     {
       "id": 2,
@@ -98,7 +97,7 @@
           "amount": 16000
         }
       ],
-      "imageURL": "https://example.com/janesmith.jpg"
+      "imageURL": "https://images.unsplash.com/photo-1492462543947-040389c4a66c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVvcGxlJTIwYmxhY2t8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=500&q=60"
     },
     {
       "id": 3,
@@ -129,7 +128,7 @@
           "amount": 25000
         }
       ],
-      "imageURL": "https://example.com/robertjohnson.jpg"
+      "imageURL": "https://images.unsplash.com/photo-1509305717900-84f40e786d82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBlb3BsZSUyMGJsYWNrfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60"
     }
   ]
 }
