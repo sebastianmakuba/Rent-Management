@@ -15,5 +15,8 @@ This is where most thisngs happen. The owners have the power to add or remove te
 ### Tenant Section
 The project has a login page that opens either a tenant or owner section. To navigate to the tenant's sections, ypu use the house number as your username and the the ID no as ypur password. These choices were made since both of these attributes are unique. One a tenant logs into the systen, they cam access their invoice. The invoice dispalys several important factors including previous payments and bills. In addition, the tenany can pay their bills from this section. 
 
+### Owner's Section
+This section has all the admins of the system. This is because they have the power to add and delete tenants from the system. Although they share a login page with the tenants, they are redirected to a different system. Their system allows them to add new users by keying in all necessary attributes. 
+
 #### Author Name :
       Sebastian Makuba
