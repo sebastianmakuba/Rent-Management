@@ -51,7 +51,7 @@
         }
         
       ],
-      "previousBalances": 1000,
+      
       "previousPayments": [
         {
           "date": "2023-06-01",
@@ -86,7 +86,7 @@
           "amount": 600
         }
       ],
-      "previousBalances": 300,
+      
       "previousPayments": [
         {
           "date": "2023-06-01",
@@ -117,7 +117,7 @@
           "amount": 800
         }
       ],
-      "previousBalances": -1200,
+      
       "previousPayments": [
         {
           "date": "2023-06-01",

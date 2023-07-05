@@ -39,11 +39,10 @@ function generateInvoice(event) {
 
     if (tenant) {
       const currentRent = tenant.rentAmount || 0;
-      const bills = tenant.bills.reduce((total, bill) => total + bill.amount, 0) || 0;
-      const previousPayments = tenant.previousPayments.reduce((total, payment) => total + payment.amount, 0) || 0;
-
-      const upcomingRent = bills + currentRent;
-      const previousBalances = previousPayments - upcomingRent;
+      // const bills = tenant.bills.reduce((total, bill) => total + bill.amount, 0) || 0;
+      //const previousPayments = tenant.previousPayments.reduce((total, payment) => total + payment.amount, 0) || 0;
+    const upcomingRent = `Your next rent is ${currentRent} + bills + any overdue`
+      
 
       const invoice = {
         tenantidNo: tenant.idNo,
@@ -52,7 +51,7 @@ function generateInvoice(event) {
         bills: tenant.bills,
         previousPayments: tenant.previousPayments,
         upcomingRent: upcomingRent,
-        previousBalances: previousBalances,
+        // previousBalances: previousBalances,
         dueDate: new Date().toLocaleDateString()
       };
 
@@ -63,11 +62,10 @@ function generateInvoice(event) {
         <p>House Number: ${invoice.houseNumber}</p>
         <p>Current Rent: ${invoice.currentRent}</p>
         <p>Bills:</p>
-        ${invoice.bills.map(bill => `<p>Date: ${bill.latestMonthBill}, Amount: ${bill.amount}</p>`).join('')}
+        ${invoice.bills.map(bill => `<p>Date: ${bill.month}, Amount: ${bill.amount}</p>`).join('')}
         <p>Previous Payments:</p>
         ${invoice.previousPayments.map(payment => `<p>Date: ${payment.date}, Amount: ${payment.amount}</p>`).join('')}
         <p>Upcoming Rent: ${invoice.upcomingRent}</p>
-        <p>Previous Balances: ${invoice.previousBalances}</p>
         <p>Due Date: ${invoice.dueDate}</p>
         <button id="payButton">Pay Balance</button>`;
 
