@@ -11,5 +11,8 @@ This is a simple section that shows the tenants invoices. It does so by capturin
 ### Owner Section
 This is where most thisngs happen. The owners have the power to add or remove tenants. Through this new tenants are easily added to the system. This is enabled through a system that records the input and uploads it to a server for easy access. Additionally the owner can remove the user from the system by entering their id and clicking a button. Another feature is the add bills button. Through this, the owner can update the user their pending bills which is adds up to the net rent. 
 
+## Set Up instructions
+The project has a login page that opens either a tenant or owner section. To navigate to the tenant's sections, ypu use the house number as your username and the the ID no as ypur password. These choices were made since both of these attributes are unique.
+
 #### Author Name :
       Sebastian Makuba
