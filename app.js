@@ -202,7 +202,7 @@ document.getElementById('addTenantForm').addEventListener('submit', function(eve
     email: email,
     houseNumber: houseNumber,
     houseType: houseType,
-    id: idNo,
+    idNo: idNo,
   };
 
   addTenant(tenant)
@@ -212,7 +212,7 @@ document.getElementById('addTenantForm').addEventListener('submit', function(eve
 });
 
 document.getElementById('removeTenantButton').addEventListener('click', function(event) {
-  const tenantId = parseInt(document.getElementById('removeTenantId').value);
+  const tenantId = document.getElementById('removeTenantId').value;
 
   removeTenant(tenantId)
     .then(() => {
@@ -225,3 +225,5 @@ document.getElementById('removeTenantButton').addEventListener('click', function
 document.getElementById('generateInvoiceButton').addEventListener('click', generateInvoice);
 document.getElementById('loginForm').addEventListener('submit', login)
   
+////////////////////////////
+//////////////////////////

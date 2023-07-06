@@ -45,8 +45,11 @@
         {
           "date": "2023-07-05",
           "amount": 12000
+        },
+        {
+          "date": "2023-07-06",
+          "amount": 8000
         }
-        
       ],
       "imageURL": "https://media.istockphoto.com/id/1403196779/photo/a-happy-mixed-race-family-of-three-relaxing-in-the-lounge-and-being-playful-together-loving.webp?b=1&s=170667a&w=0&k=20&c=DBT3ZNzlXD65-mFs2AeOBJZ0nC-lPT3YLvPRrNAwyKw="
     },
@@ -111,6 +114,14 @@
         }
       ],
       "imageURL": "https://images.unsplash.com/photo-1509305717900-84f40e786d82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBlb3BsZSUyMGJsYWNrfGVufDB8fDB8fHwy&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+      "name": "sebastian",
+      "phone": "34567",
+      "email": "sebbby@email.address",
+      "houseNumber": "76",
+      "houseType": "Bedsitter",
+      "id": "987123"
     }
   ]
 }
