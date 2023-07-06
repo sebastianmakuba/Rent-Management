@@ -121,7 +121,7 @@ function uploadBill(event) {
   const amount = parseInt(document.getElementById('billAmount').value);
 
   const bill = {
-    latestMonthBill: month,
+    bill: month,
     amount: amount
   };
 
