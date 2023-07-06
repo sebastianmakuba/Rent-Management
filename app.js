@@ -219,9 +219,8 @@ document.getElementById('removeTenantButton').addEventListener('click', function
       alert('Tenant removed successfully.');
       document.getElementById('removeTenantId').value = '';
     })
-   
+    
 });
-
 document.getElementById('generateInvoiceButton').addEventListener('click', generateInvoice);
 document.getElementById('loginForm').addEventListener('submit', login)
   
