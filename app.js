@@ -168,6 +168,7 @@ async function login(event) {
     document.getElementById('loginSection').style.display = 'none';
     const ownerImage = document.getElementById('ownerImage');
     ownerImage.src = owner.imageURL;
+    displayTenants();
 
   } else {
     const tenants = await getTenants();
@@ -223,6 +224,26 @@ document.getElementById('removeTenantButton').addEventListener('click', function
 });
 document.getElementById('generateInvoiceButton').addEventListener('click', generateInvoice);
 document.getElementById('loginForm').addEventListener('submit', login)
-  
-////////////////////////////
-//////////////////////////
+  ///table to display tenants
+async function displayTenants() {
+  const tenants = await getTenants();
+  const tenantsTableBody = document.getElementById('tenantsTableBody');
+
+  // Clear the table body before populating
+  tenantsTableBody.innerHTML = '';
+
+  tenants.forEach(tenant => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${tenant.name}</td>
+      <td>${tenant.phone}</td>
+      <td>${tenant.email}</td>
+      <td>${tenant.houseNumber}</td>
+      <td>${tenant.houseType}</td>
+      <td>${tenant.id}</td>
+      <td>${tenant.idNo}</td>
+
+    `;
+    tenantsTableBody.appendChild(row);
+  });
+}
