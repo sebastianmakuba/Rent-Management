@@ -67,7 +67,7 @@ function generateInvoice(event) {
         <p>Upcoming Rent: ${invoice.upcomingRent}</p>
         <p>Due Date: ${invoice.dueDate}</p>
         <button id="payButton">Pay Balance</button
-        <label for="amount">Amount you want to pay:</label>
+        <label for="amount">Amount you wish to pay:</label>
         <input type="text" id="inputAmount" required>
         `;
 
