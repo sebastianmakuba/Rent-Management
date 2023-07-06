@@ -39,11 +39,11 @@ function generateInvoice(event) {
 
     if (tenant) {
       const currentRent = tenant.rentAmount ;
-      
-    const upcomingRent = `This month's Bills + ${currentRent}`
+      const upcomingRent = `This month's Bills + ${currentRent}`
       
 
       const invoice = {
+        username : tenant.name,
         tenantidNo: tenant.idNo,
         houseNumber: tenant.houseNumber,
         currentRent: currentRent,
@@ -56,7 +56,7 @@ function generateInvoice(event) {
 
       const paymentDetails = document.getElementById('paymentDetails');
       paymentDetails.innerHTML = `
-        <p>Invoice Generated:</p>
+        <p>Hello ${invoice.username}</p>
         <p>Tenant ID: ${invoice.tenantidNo}</p>
         <p>House Number: ${invoice.houseNumber}</p>
         <p>Current Rent: ${invoice.currentRent}</p>
