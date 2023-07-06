@@ -66,7 +66,10 @@ function generateInvoice(event) {
         ${invoice.previousPayments.map(payment => `<p>Date: ${payment.date}, Amount: ${payment.amount}</p>`).join('')}
         <p>Upcoming Rent: ${invoice.upcomingRent}</p>
         <p>Due Date: ${invoice.dueDate}</p>
-        <button id="payButton">Pay Balance</button>`;
+        <button id="payButton">Pay Balance</button
+        <label for="amount">Amount you want to pay:</label>
+        <input type="text" id="inputAmount" required>
+        `;
 
       const payButton = document.getElementById('payButton');
       payButton.addEventListener('click', () => {
