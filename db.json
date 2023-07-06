@@ -4,7 +4,6 @@
       "name": "John Smith",
       "username": "johnsmith",
       "idNo": "12345",
-     
       "imageURL": "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60"
     },
     {
@@ -47,6 +46,7 @@
           "date": "2023-07-05",
           "amount": 12000
         }
+        
       ],
       "imageURL": "https://media.istockphoto.com/id/1403196779/photo/a-happy-mixed-race-family-of-three-relaxing-in-the-lounge-and-being-playful-together-loving.webp?b=1&s=170667a&w=0&k=20&c=DBT3ZNzlXD65-mFs2AeOBJZ0nC-lPT3YLvPRrNAwyKw="
     },

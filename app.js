@@ -73,7 +73,7 @@ function generateInvoice(event) {
 
       const payButton = document.getElementById('payButton');
       payButton.addEventListener('click', () => {
-        const amountToPay = parseInt(prompt('Enter the amount to pay:'));
+        const amountToPay = parseInt(document.getElementById('inputAmount').value)
         if (!isNaN(amountToPay) && amountToPay > 0) {
           const paymentDate = new Date().toISOString().split('T')[0];
 
