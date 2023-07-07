@@ -58,7 +58,7 @@ function generateInvoice(event) {
 
       const paymentDetails = document.getElementById('paymentDetails');
       paymentDetails.innerHTML = `
-        <p>Hello ${invoice.username}</p>
+        <h3>Hello ${invoice.username} 😄</h3>
         <p>Tenant ID: ${invoice.tenantidNo}</p>
         <p>House Number: ${invoice.houseNumber}</p>
         <p>Current Rent: ${invoice.currentRent}</p>
