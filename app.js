@@ -123,7 +123,7 @@ function uploadBill(event) {
   const amount = parseInt(document.getElementById('billAmount').value);
 
   const bill = {
-    bill: month,
+    month: month,
     amount: amount
   };
 
@@ -161,12 +161,12 @@ function changeProfile() {
   if (confirmation) {
     const newImageURL = prompt('Enter the URL of your new profile picture:');
     if (newImageURL) {
-      const tenantId = document.getElementById('password').value;
+      const tenantidNo = document.getElementById('password').value;
       const houseNumber = document.getElementById('username').value;
 
       getTenants()
         .then(tenants => {
-          const tenant = tenants.find(t => t.idNo === tenantId && t.houseNumber === houseNumber);
+          const tenant = tenants.find(t => t.idNo === tenantidNo && t.houseNumber === houseNumber);
 
           if (tenant) {
             tenant.imageURL = newImageURL;
@@ -242,7 +242,7 @@ document.getElementById('addTenantForm').addEventListener('submit', function(eve
   const houseNumber = document.getElementById('houseNumber').value;
   const houseType = document.getElementById('houseType').value;
   const idNo = document.getElementById('idNo').value;
-  const rentAmount = document.getElementById('rent').value;
+  const rentAmount = parseInt(document.getElementById('rent').value);
   const bills = []
   const previousPayments = []
   let imageURL = ""
