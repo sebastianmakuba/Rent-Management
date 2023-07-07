@@ -27,6 +27,8 @@ async function removeTenant(tenantId) {
   await fetch(`http://localhost:3000/tenants/${tenantId}`, {
     method: 'DELETE',
   });
+
+  
 }
 function generateInvoice(event) {
   event.preventDefault();
@@ -110,7 +112,7 @@ function generateInvoice(event) {
     }
   });
 } 
-
+//////Upload bills
 document.getElementById('uploadBillForm').addEventListener('submit', uploadBill);
 
 function uploadBill(event) {
@@ -153,6 +155,47 @@ function uploadBill(event) {
    
 }
 
+///// change tenant profile picture
+function changeProfile() {
+  const confirmation = confirm('Would you like to change your profile picture?');
+  if (confirmation) {
+    const newImageURL = prompt('Enter the URL of your new profile picture:');
+    if (newImageURL) {
+      const tenantId = document.getElementById('password').value;
+      const houseNumber = document.getElementById('username').value;
+
+      getTenants()
+        .then(tenants => {
+          const tenant = tenants.find(t => t.idNo === tenantId && t.houseNumber === houseNumber);
+
+          if (tenant) {
+            tenant.imageURL = newImageURL;
+
+            fetch(`http://localhost:3000/tenants/${tenant.id}`, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(tenant),
+            })
+              .then(() => {
+                alert('Profile picture updated successfully.');
+                const tenantImage = document.getElementById('tenantImage');
+                tenantImage.src = newImageURL; // Update the src attribute with the new URL
+              })
+             
+          } else {
+            alert('Tenant not found.');
+          }
+        })
+       
+    } else {
+      alert('Invalid URL. Please enter a valid URL.');
+    }
+  }
+}
+
+//////Login
 
 async function login(event) {
   event.preventDefault();
@@ -179,8 +222,10 @@ async function login(event) {
       document.getElementById('ownerSection').style.display = 'none';
       document.getElementById('loginSection').style.display = 'none';
 
-      const tenantImage = document.getElementById('tenantImage');
+      const tenantImage = document.getElementById('tenantImage')
       tenantImage.src = tenant.imageURL;
+      tenantImage.style.cursor = 'pointer'
+      tenantImage.addEventListener('click', changeProfile);
     } else {
       alert('Invalid login credentials.');
     }
@@ -188,6 +233,7 @@ async function login(event) {
 }
 
 
+///Add new tenant
 document.getElementById('addTenantForm').addEventListener('submit', function(event) {
   event.preventDefault();
   const name = document.getElementById('name').value;
@@ -196,6 +242,11 @@ document.getElementById('addTenantForm').addEventListener('submit', function(eve
   const houseNumber = document.getElementById('houseNumber').value;
   const houseType = document.getElementById('houseType').value;
   const idNo = document.getElementById('idNo').value;
+  const rentAmount = document.getElementById('rent').value;
+  const bills = []
+  const previousPayments = []
+  let imageURL = ""
+  
 
   const tenant = {
     name: name,
@@ -204,12 +255,17 @@ document.getElementById('addTenantForm').addEventListener('submit', function(eve
     houseNumber: houseNumber,
     houseType: houseType,
     idNo: idNo,
+    rentAmount : rentAmount,
+    bills: bills,
+    previousPayments : previousPayments, 
+    imageURL : imageURL
   };
 
   addTenant(tenant)
     .then(() => alert('Tenant added successfully.'))
     
   this.reset();
+  
 });
 
 document.getElementById('removeTenantButton').addEventListener('click', function(event) {
